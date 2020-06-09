@@ -21,7 +21,7 @@ function App() {
             <Home />
           </Route>
 
-          <Route path="/pokemon/:id">
+          <Route path="/pokemon/:name">
             <Pokemon />
           </Route>
 
