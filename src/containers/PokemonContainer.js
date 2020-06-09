@@ -13,7 +13,7 @@ function PokemonContainer(){
     const {page = 1} = useParams()
     const pageNumber = parseInt(page)
 
-    let {loading, data: { pokemons = []} = {}} = useQuery(GET_POKEMONS, {variables: {first: MAX_POKEMON_PER_PAGE * pageNumber}})
+    let {loading, error, data: { pokemons = []} = {}} = useQuery(GET_POKEMONS, {variables: {first: MAX_POKEMON_PER_PAGE * pageNumber}})
 
     const pageNumberLinks = () => {
 
@@ -30,6 +30,8 @@ function PokemonContainer(){
     let numberOfPokemonToDisplay = remainderOnPage === 0 ? MAX_POKEMON_PER_PAGE : remainderOnPage
 
     if (loading) return "Loading..."
+
+    if (error) return "There was an error retrieving the list of Pokémon. Please try again later."
 
     return(
         <>

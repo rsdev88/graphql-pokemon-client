@@ -6,10 +6,12 @@ import { GET_POKEMON } from "../graphql/get-pokemon"
 
 function Pokemon(){
 
-    const {id} = useParams()
-    const {loading, data: { pokemon } = {}} = useQuery(GET_POKEMON, {variables: {id: id}})
+    const {name} = useParams()
+    const {loading, error, data: { pokemon } = {}} = useQuery(GET_POKEMON, {variables: {name: name}})
 
     if (loading) return "Loading..."
+
+    if (error) return "There was an error retreiving data for this Pokémon. Please try again later."
 
     return(
         <div className="pokemon">
