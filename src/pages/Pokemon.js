@@ -7,7 +7,9 @@ import { GET_POKEMON } from "../graphql/get-pokemon"
 function Pokemon(){
 
     const {id} = useParams()
-    const {data: { pokemon } = {}} = useQuery(GET_POKEMON, {variables: {id: id}})
+    const {loading, data: { pokemon } = {}} = useQuery(GET_POKEMON, {variables: {id: id}})
+
+    if (loading) return "Loading..."
 
     return(
         <div className="pokemon">

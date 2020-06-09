@@ -1,7 +1,7 @@
 import React from "react"
 import {Link} from "react-router-dom"
 
-function Pokemon({pokemon}){
+function Pokemon({pokemon, index}){
     return(
         <div className="pokemon-preview">
             <div className="pokemon-preview__name">
