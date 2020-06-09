@@ -2,7 +2,7 @@ import gql from "graphql-tag"
 
 export const GET_POKEMON = gql`
 
-    query pokemon($id: String) 
+    query Pokemon($id: String) 
     {
         pokemon(id: $id){
             id

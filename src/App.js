@@ -16,13 +16,15 @@ function App() {
     <ApolloProvider client={client}>
 
         <Switch>
-          <Route exact path="/">
+
+          <Route exact path={["/", "/:page"]}>
             <Home />
           </Route>
 
           <Route path="/pokemon/:id">
             <Pokemon />
           </Route>
+
         </Switch>
       
     </ApolloProvider>
