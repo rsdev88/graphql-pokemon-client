@@ -1,0 +1,27 @@
+header {
+    height: 30vh;
+    background-color: var(--red);
+    box-shadow: 0px 1px 10px grey;
+    display: grid;
+    grid-template-columns: 20px 1fr 20px;
+    grid-template-rows: repeat(2, auto);
+    background-image: url(../Header/pokeball.png);
+    background-position: center;
+    background-size: cover;
+    background-blend-mode: lighten;
+    position: fixed;
+    width: 100vw;
+    top: 0;
+    z-index: 1;
+}
+
+.header__title {
+    color: white;
+    font-size: 40pt;
+    text-shadow: 0px 0px 20px gray;
+
+    grid-column: 2/3;
+    grid-row: 1/2;
+    justify-self: center;
+    align-self: center;
+}

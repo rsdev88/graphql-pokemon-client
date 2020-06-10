@@ -2,8 +2,9 @@ import React from "react"
 import {useQuery} from "@apollo/react-hooks"
 import {useParams, Link} from "react-router-dom"
 
-import PokemonPreview from "../components/PokemonPreview/PokemonPreview"
-import {GET_POKEMONS} from "../graphql/get-pokemons"
+import PokemonPreview from "../PokemonPreview/PokemonPreview"
+import {GET_POKEMONS} from "../../graphql/get-pokemons"
+import "./pokemon-container.css"
 
 function PokemonContainer(){
 

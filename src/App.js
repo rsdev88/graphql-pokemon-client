@@ -5,6 +5,8 @@ import {Switch, Route} from "react-router-dom"
 
 import Home from "./pages/Home"
 import Pokemon from './pages/Pokemon';
+import Header from "./components/Header/Header"
+import Footer from "./components/Footer/Footer"
 
 function App() {
 
@@ -14,19 +16,21 @@ function App() {
 
   return (
     <ApolloProvider client={client}>
+        <Header />
 
-        <Switch>
+        <main>
+          <Switch>
+            <Route exact path={["/", "/:page"]}>
+              <Home />
+            </Route>
 
-          <Route exact path={["/", "/:page"]}>
-            <Home />
-          </Route>
+            <Route path="/pokemon/:name">
+              <Pokemon />
+            </Route>
+          </Switch>
+        </main>
 
-          <Route path="/pokemon/:name">
-            <Pokemon />
-          </Route>
-
-        </Switch>
-      
+        <Footer/>
     </ApolloProvider>
   );
 }
