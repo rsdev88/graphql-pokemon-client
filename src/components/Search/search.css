@@ -39,6 +39,7 @@
     background-color: white;
     position: absolute;
     overflow-y: auto;
+    top: 80%;
 }
 
 .search__matches__list {

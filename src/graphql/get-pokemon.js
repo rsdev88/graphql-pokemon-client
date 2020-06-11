@@ -7,13 +7,42 @@ export const GET_POKEMON = gql`
         pokemon(name: $name){
             id
             name
-            image
-            maxHP
+            number
+            height {
+                maximum
+                minimum
+            }
+    		weight{
+                maximum
+                minimum
+            }
+            classification
+            types
+            resistant
+            weaknesses
             attacks {
-                special {
+                fast{
                     name
+                    type
                     damage
                 }
+                special {
+                    name
+                    type
+                    damage
+                }
+            }
+            fleeRate
+            maxCP
+            maxHP
+            evolutions {
+                name
+                number
+                image
+            }
+            evolutionRequirements {
+                amount
+                name
             }
             image
         }
