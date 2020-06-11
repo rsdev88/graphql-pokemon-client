@@ -9,7 +9,7 @@ import "./pokemon-container.css"
 function PokemonContainer(){
 
     const MAX_POKEMON_COUNT = 151
-    const MAX_POKEMON_PER_PAGE = 10
+    const MAX_POKEMON_PER_PAGE = 24
     const MAX_NUMBER_OF_PAGES = Math.ceil(MAX_POKEMON_COUNT/MAX_POKEMON_PER_PAGE)
     const {page = 1} = useParams()
     const pageNumber = parseInt(page)

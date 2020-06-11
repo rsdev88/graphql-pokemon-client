@@ -17,11 +17,17 @@ header {
 
 .header__title {
     color: white;
-    font-size: 40pt;
+    font-size: 32pt;
     text-shadow: 0px 0px 20px gray;
-
     grid-column: 2/3;
     grid-row: 1/2;
     justify-self: center;
     align-self: center;
+    margin: 0;
+}
+
+@media screen and (min-width: 375px) {
+    .header__title {
+        font-size: 40pt;
+    }
 }
