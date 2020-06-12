@@ -4,6 +4,8 @@ import "./pokemon-details-type-icon.css"
 
 function PokemonDetailsTypeIcon({type}){
 
+    if (!type) return ""
+
     const typeName = getIconName(type)
 
     return (

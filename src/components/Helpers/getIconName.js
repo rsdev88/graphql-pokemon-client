@@ -1,4 +1,6 @@
 export default function getIconName(type){
+    if (!type) return "question"
+
     switch (type.toLowerCase()){
         case "grass":
             return "leaf"
@@ -34,6 +36,8 @@ export default function getIconName(type){
             return "ghost";
         case "dragon":
             return "dragon"
+        case "dark": 
+            return "moon"
         default:
             return "question"
     }
