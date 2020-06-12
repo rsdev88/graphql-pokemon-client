@@ -1,6 +1,8 @@
 :root {
     --very-light-grey: #dddde5;
     --very-light-yellow-grey: #e5e3dd;
+    --grey: #3a3a3a;
+    --dark-grey: #292929;
     --light-red: #F79696;
     --red: #CF5D5D;
     --dark-red: #A93333;
@@ -47,4 +49,35 @@ main {
     margin: 10px; */
     margin: 32vh 10px 50px 10px;
 }
+
+.pokemon--grass, .pokemon--bug,  .pokemon--dragon{
+    background-color: var(--light-green);
+    color: var(--dark-green)
+}
+
+.pokemon--poison, .pokemon--psychic, .pokemon--ghost{
+    background-color: var(--light-purple);
+    color: var(--dark-purple)
+}
+
+.pokemon--electric, .pokemon--fairy {
+    background-color: var(--light-yellow);
+    color: var(--dark-yellow)
+}
+
+.pokemon--fire, .pokemon--ground {
+    background-color: var(--light-orange);
+    color: var(--dark-orange)
+}
+
+.pokemon--flying, .pokemon--water, .pokemon--ice {
+    background-color: var(--light-blue);
+    color: var(--dark-blue)
+}
+
+.pokemon--normal, .pokemon--fighting, .pokemon--rock {
+    background-color: var(--light-red);
+    color: var(--dark-red)
+}
+
 

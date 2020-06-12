@@ -1,0 +1,35 @@
+.pokemon__type{
+    padding: 5px;
+    border: 2px solid white;
+    border-radius: 20px;
+    float: left;
+    text-align: center;
+    margin: 2px;
+    color: white;
+    min-width: 55px;
+    font-family: 'Oswald', sans-serif;
+}
+
+.li--grass, .li--bug, .li--dragon {
+    background-color: var(--green);
+}
+
+.li--poison, .li--psychic, .li--ghost {
+    background-color: var(--purple);
+}
+
+.li--electric, .li--fairy {
+    background-color: var(--yellow);
+}
+
+.li--fire, .li--ground {
+    background-color: var(--orange);
+}
+
+.li--flying, .li--water, .li--ice {
+    background-color: var(--blue);
+}
+
+.li--normal, .li--fighting, .li--rock {
+    background-color: var(--red);
+}

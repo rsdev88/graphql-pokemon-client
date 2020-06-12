@@ -4,7 +4,7 @@ import {ApolloProvider} from "@apollo/react-hooks"
 import {Switch, Route} from "react-router-dom"
 
 import Home from "./pages/Home"
-import Pokemon from './pages/Pokemon';
+import Pokemon from './pages/Pokemon/Pokemon';
 import Header from "./components/Header/Header"
 import Footer from "./components/Footer/Footer"
 
