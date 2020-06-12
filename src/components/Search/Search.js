@@ -26,6 +26,11 @@ function Search(){
         setDisplayMatches(value.length > 0)
     }
 
+    function handleClick(){
+        setDisplayMatches(false)
+        setSearchTerm("")
+    }
+
     function findMatches(value) {
         if (value.length < MINIMUM_SEARCH_LENGTH){
             setMatches([])
@@ -58,7 +63,7 @@ function Search(){
                     key={match.id}>
                     <Link 
                         to={`/pokemon/${match.name.toLowerCase()}`}
-                        onClick={() => setDisplayMatches(false)}>
+                        onClick={() => handleClick()}>
                             <img src={match.image} alt={match.name}/> {`#${match.number}: ${match.name}`}
                     </Link>
                 </li>))
