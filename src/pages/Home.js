@@ -1,13 +1,9 @@
 import React from "react"
-import PokemonContainer from "../containers/PokemonContainer"
-import Search from "../components/Search/Search"
+import PokemonContainer from "../components/PokemonContainer/PokemonContainer"
 
 function Home(){
     return(
-        <main>
-          <Search />
-          <PokemonContainer/>
-        </main>
+      <PokemonContainer/>
     )
 }
 

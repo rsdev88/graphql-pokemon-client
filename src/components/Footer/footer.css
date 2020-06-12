@@ -1,0 +1,14 @@
+footer {
+    position: absolute;
+    bottom: -50px;
+    width: 100vw;
+    background-color: var(--red);
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+    line-height: 40px;
+}
+
+.footer__link {
+    color: white;
+    text-decoration: none;
+}

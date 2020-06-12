@@ -1,0 +1,81 @@
+.pokemon-hero{
+    background-image: url("./pokeball.png");
+    background-blend-mode: soft-light;
+    background-repeat: no-repeat;
+    background-size: 500px;
+    background-position: center;
+    border-radius: 10px 10px 0 0;
+    box-shadow: 0px 2px 10px grey;
+    height: 420px;
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 110px 200px 110px;
+    grid-template-areas: 
+        ". h h h h h h h h h n ."
+        ". i i i i i i i i i i ."
+        ". t t t t t t t t t t .";
+}
+
+.pokemon-hero:hover{
+    cursor: pointer;
+}
+
+.pokemon-hero__name-container{
+    grid-area: h;
+}
+
+.pokemon-hero__name-container h3 {
+    text-shadow: 1px 1px 1px white;
+    font-size: 30pt;
+}
+
+.pokemon-hero__number-container{
+    grid-area: n;
+    background-color: white;
+    padding: 5px;
+    border-radius: 10px;
+    border: 2px solid;
+    font-size: 18pt;
+}
+
+.pokemon-hero__image-container {
+    grid-area: i;
+    height: 200px;
+    background-color: white;
+    border-radius: 20px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding: 10px;
+}
+
+.pokemon-hero__types-container {
+    grid-area: t;
+}
+
+.pokemon-hero__types-container > ul {
+    list-style-type: none;
+    overflow: hidden;
+    font-size: 18pt;
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+}
+
+.pokemon-hero__types-container .pokemon__type {
+    padding: 10px;
+}
+
+.pokemon-hero__image-container > img {
+    max-height: 100%;
+    max-width: 100%;
+    border-radius: 20px;
+}
+
+@media screen and (min-width: 375px) {
+
+    .pokemon-hero__name-container h3 {
+        font-size: 35pt;
+    }
+}

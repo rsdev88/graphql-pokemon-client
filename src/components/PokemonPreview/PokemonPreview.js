@@ -1,27 +1,20 @@
 import React from "react"
-import {Link} from "react-router-dom"
+import {useHistory} from "react-router-dom"
+import PokemonHero from "../PokemonHero/PokemonHero"
+import "./pokemon-preview.css"
 
-function Pokemon({pokemon, index}){
+
+function PokemonPreview({pokemon}){
+
+    const history = useHistory()
+    
     return(
-        <div className="pokemon-preview">
-            <div className="pokemon-preview__name">
-                <Link to={`/pokemon/${pokemon.name.toLowerCase()}`}><h3>{pokemon.name}</h3></Link>
-            </div>
-            <div className="pokemon-preview__meta">
-                <p>{pokemon.maxHP}</p>
-            </div>
-            <div className="pokemon-preview__image">
-                <img src={pokemon.image} alt={pokemon.name}/>
-            </div>
-            <div className="pokemon-preview__attacks">
-                <ul>
-                    {pokemon.attacks.special.map((attack, index) => <li key={index}>{attack.name}: {attack.damage}DMG</li>)}
-                </ul>
-            </div>
-            <p><Link to={`/pokemon/${pokemon.name.toLowerCase()}`}>More details...</Link></p>
-            <hr/>
-        </div>
+        <PokemonHero 
+            pokemon={pokemon}
+            classSuffix = "preview"
+            onClick={() => history.push(`/pokemon/${pokemon.name.toLowerCase()}`)}
+        />
     )
 }
 
-export default Pokemon
+export default PokemonPreview

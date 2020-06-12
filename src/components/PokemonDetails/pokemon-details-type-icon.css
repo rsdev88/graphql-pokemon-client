@@ -1,0 +1,23 @@
+.pokemon-details-type-icon--grass, .pokemon-details-type-icon--bug, .pokemon-details-type-icon--dragon {
+    color: var(--dark-green);
+}
+
+.pokemon-details-type-icon--poison, .pokemon-details-type-icon--psychic, .pokemon-details-type-icon--ghost {
+    color: var(--dark-purple);
+}
+
+.pokemon-details-type-icon--electric, .pokemon-details-type-icon--fairy {
+    color: var(--dark-yellow);
+}
+
+.pokemon-details-type-icon--fire, .pokemon-details-type-icon--ground {
+    color: var(--dark-orange);
+}
+
+.pokemon-details-type-icon--flying, .pokemon-details-type-icon--water, .pokemon-details-type-icon--ice {
+    color: var(--dark-blue);
+}
+
+.pokemon-details-type-icon--normal, .pokemon-details-type-icon--fighting, .pokemon-details-type-icon--rock {
+    color: var(--dark-red);
+}
