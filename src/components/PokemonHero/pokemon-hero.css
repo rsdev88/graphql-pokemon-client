@@ -1,5 +1,5 @@
 .pokemon-hero{
-    background-image: url("../Header/pokeball.png");
+    background-image: url("./pokeball.png");
     background-blend-mode: soft-light;
     background-repeat: no-repeat;
     background-size: 500px;
