@@ -1,0 +1,24 @@
+.pokemon__details__evolutions{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.pokemon__details__evolutions__grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 200px));
+    grid-template-rows: 300px;
+    grid-gap: 10px;
+    padding: 10px;
+}
+
+.pokemon__details__evolutions__grid span{
+    font-family: 'Anton', sans-serif;
+    font-size: 12pt !important;
+    color: inherit !important;
+}
+
+.pokemon__details__evolutions__grid h3{
+    font-size: 18pt !important;
+    margin: 10px 0 !important;
+}

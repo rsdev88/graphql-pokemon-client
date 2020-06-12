@@ -39,6 +39,7 @@ export const GET_POKEMON = gql`
                 name
                 number
                 image
+                types
             }
             evolutionRequirements {
                 amount
