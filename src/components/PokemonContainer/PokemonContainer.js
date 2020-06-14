@@ -28,7 +28,7 @@ function PokemonContainer(){
     return(
         <>
             <div className="pokemon-container">
-                {pokemons && pokemons.slice(numberOfPokemonToDisplay * -1).map((pokemon, index) => <PokemonPreview key={pokemon.id} pokemon={pokemon}/>)}
+                {pokemons && pokemons.slice(numberOfPokemonToDisplay * -1).map(pokemon => <PokemonPreview key={pokemon.id} pokemon={pokemon}/>)}
             </div>
             <Pagination pageNumber={pageNumber} maxPages = {MAX_NUMBER_OF_PAGES}/>
         </>

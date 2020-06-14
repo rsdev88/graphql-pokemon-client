@@ -4,7 +4,8 @@ import {ApolloProvider} from "@apollo/react-hooks"
 import {Switch, Route} from "react-router-dom"
 
 import Home from "./pages/Home"
-import Pokemon from './pages/Pokemon/Pokemon';
+import Pokemon from './pages/Pokemon/Pokemon'
+import Results from "./pages/Results/Results"
 import Header from "./components/Header/Header"
 import Footer from "./components/Footer/Footer"
 
@@ -26,6 +27,10 @@ function App() {
 
             <Route path="/pokemon/:name">
               <Pokemon />
+            </Route>
+
+            <Route path="/searchresults/:searchTerm">
+              <Results />
             </Route>
           </Switch>
         </main>
