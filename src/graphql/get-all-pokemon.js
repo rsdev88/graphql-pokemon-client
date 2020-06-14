@@ -6,6 +6,7 @@ export const GET_ALL_POKEMON = gql`
             id
             name
             number
+            types
             image
         }
     }

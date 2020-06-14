@@ -2,6 +2,7 @@ import React, {useState} from "react"
 import {useQuery} from "@apollo/react-hooks"
 import {Link} from "react-router-dom"
 import { GET_ALL_POKEMON } from "../../graphql/get-all-pokemon"
+import PokemonType from "../PokemonType/PokemonType"
 import "./search.css"
 
 function Search(){
@@ -39,9 +40,12 @@ function Search(){
             let matchedPokemon
             if (value.length === MINIMUM_SEARCH_LENGTH)
             {
-                matchedPokemon = pokemons.filter(pokemon => pokemon.name.toLowerCase().startsWith(value.toLowerCase()))
+                matchedPokemon = pokemons.filter(pokemon => pokemon.name.toLowerCase().startsWith(value.toLowerCase()) ||
+                                                            pokemon.number.includes(value.toLowerCase()))
             } else {
-                matchedPokemon = pokemons.filter(pokemon => pokemon.name.toLowerCase().includes(value.toLowerCase()))
+                matchedPokemon = pokemons.filter(pokemon => pokemon.name.toLowerCase().includes(value.toLowerCase()) ||
+                                                            pokemon.types.some(type => type.toLowerCase().indexOf(value.toLowerCase()) !== -1 ) ||                                            
+                                                            pokemon.number.includes(value.toLowerCase()))
             }
             
             setMatches(matchedPokemon ?? [])
@@ -64,7 +68,11 @@ function Search(){
                     <Link 
                         to={`/pokemon/${match.name.toLowerCase()}`}
                         onClick={() => handleClick()}>
-                            <img src={match.image} alt={match.name}/> {`#${match.number}: ${match.name}`}
+                            <img src={match.image} alt={match.name}/>
+                            <span>{`#${match.number}: ${match.name}`}</span>
+                            <ul>
+                                {match.types.map((type, index) => <PokemonType key={index} type={type}/>)}
+                            </ul>
                     </Link>
                 </li>))
         }
@@ -76,7 +84,7 @@ function Search(){
                 className="search__input"
                 value={searchTerm}
                 onChange={(event) => handleChange(event)}
-                placeholder="Start typing a Pokémon's name to search..."
+                placeholder="Start typing a Pokémon's name, number or type to search..."
             >
             </input>
             { displayMatches &&
