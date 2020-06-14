@@ -1,6 +1,7 @@
-import React, {useState} from "react"
+import React, {useState, useContext} from "react"
 import {useQuery} from "@apollo/react-hooks"
-import {Link} from "react-router-dom"
+import {Link, useHistory} from "react-router-dom"
+import {AppContext} from "../Context/AppContext"
 import { GET_ALL_POKEMON } from "../../graphql/get-all-pokemon"
 import PokemonType from "../PokemonType/PokemonType"
 import "./search.css"
@@ -9,9 +10,10 @@ function Search(){
 
     const MINIMUM_SEARCH_LENGTH = 1
     let {loading, error, data: { pokemons = []} = {}} = useQuery(GET_ALL_POKEMON)
-    const [matches, setMatches] = useState([])
     const [searchTerm, setSearchTerm] = useState("")
     const [displayMatches, setDisplayMatches] = useState(false)
+    const {searchMatches, setSearchMatches} = useContext(AppContext)
+    const history = useHistory()
 
     function handleChange(event){
 
@@ -30,11 +32,20 @@ function Search(){
     function handleClick(){
         setDisplayMatches(false)
         setSearchTerm("")
+        setSearchMatches([])
+    }
+
+    function handleSubmit(event){
+        event.preventDefault()
+
+        const term = searchTerm
+        setSearchTerm("")
+        history.push(`/searchresults/${term.toLowerCase()}`)
     }
 
     function findMatches(value) {
         if (value.length < MINIMUM_SEARCH_LENGTH){
-            setMatches([])
+            setSearchMatches([])
         } else if (pokemons && pokemons.length){
 
             let matchedPokemon
@@ -48,21 +59,21 @@ function Search(){
                                                             pokemon.number.includes(value.toLowerCase()))
             }
             
-            setMatches(matchedPokemon ?? [])
+            setSearchMatches(matchedPokemon ?? [])
         }
     }
 
     const matchesElements = () => {        
-        if(matches && searchTerm.length > 0){
+        if(searchMatches && searchTerm.length > 0){
             if (loading) return <li className="search__matches__list-item">Loading...</li>
 
             if (error) return <li className="search__matches__list-item">Oops! There was an error retrieving the list of Pokémon for the search. Sorry about that. You can still look for your Pokémon yourself in the pages below.</li>
             
-            if (searchTerm.length >= MINIMUM_SEARCH_LENGTH && !matches.length){
+            if (searchTerm.length >= MINIMUM_SEARCH_LENGTH && !searchMatches.length){
                 return <li className="search__matches__list-item">No matches were found.</li>
             }  
 
-            return matches.map(match => (
+            return searchMatches.map(match => (
                 <li className="search__matches__list-item"
                     key={match.id}>
                     <Link 
@@ -80,13 +91,19 @@ function Search(){
 
     return(
         <div className="search">
-            <input
-                className="search__input"
-                value={searchTerm}
-                onChange={(event) => handleChange(event)}
-                placeholder="Start typing a Pokémon's name, number or type to search..."
+            <form 
+                className="search__form"
+                onSubmit={(event) => handleSubmit(event)}
             >
-            </input>
+                <input
+                    className="search__input"
+                    value={searchTerm}
+                    onChange={(event) => handleChange(event)}
+                    
+                    placeholder="Start typing a Pokémon's name, number or type to search..."
+                >
+                </input>
+            </form>
             { displayMatches &&
                 <div className="search__matches">
                     <ul className="search__matches__list">
