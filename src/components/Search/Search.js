@@ -70,7 +70,7 @@ function Search(){
             if (error) return <li className="search__matches__list-item">Oops! There was an error retrieving the list of Pokémon for the search. Sorry about that. You can still look for your Pokémon yourself in the pages below.</li>
             
             if (searchTerm.length >= MINIMUM_SEARCH_LENGTH && !searchMatches.length){
-                return <li className="search__matches__list-item">No matches were found.</li>
+                return <li className="search__matches__list-item">No results were found.</li>
             }  
 
             return searchMatches.map(match => (

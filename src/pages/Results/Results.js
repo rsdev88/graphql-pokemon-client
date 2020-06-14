@@ -11,7 +11,7 @@ function Results(){
 
     return(
         <>
-            <h4>Search results for "{searchTerm}"</h4>
+            <h4>{searchMatches && searchMatches.length ? `Search results for "${searchTerm}"` : `No results found for "${searchTerm}"`}</h4>
             <div className="search__results__container">
                 {searchMatches && searchMatches.map(match => <PokemonPreview key={match.id} pokemon={match}/>)}
             </div>
