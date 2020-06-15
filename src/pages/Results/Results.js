@@ -1,8 +1,7 @@
 import React, {useContext} from "react"
 import {useParams} from "react-router-dom"
 import { AppContext } from "../../components/Context/AppContext"
-import PokemonPreview from "../../components/PokemonPreview/PokemonPreview"
-import "./results.css"
+import PokemonContainer from "../../components/PokemonContainer/PokemonContainer"
 
 function Results(){
 
@@ -12,9 +11,7 @@ function Results(){
     return(
         <>
             <h4>{searchMatches && searchMatches.length ? `Search results for "${searchTerm}"` : `No results found for "${searchTerm}"`}</h4>
-            <div className="search__results__container">
-                {searchMatches && searchMatches.map(match => <PokemonPreview key={match.id} pokemon={match}/>)}
-            </div>
+            {searchMatches && <PokemonContainer pokemons={searchMatches}/>}
         </>
     )
 }
