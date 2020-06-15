@@ -1,19 +1,17 @@
-import React, {useState, useContext} from "react"
-import {useQuery} from "@apollo/react-hooks"
+import React, {useState} from "react"
 import {Link, useHistory} from "react-router-dom"
-import {AppContext} from "../Context/AppContext"
-import { GET_ALL_POKEMON } from "../../graphql/get-all-pokemon"
 import PokemonType from "../PokemonType/PokemonType"
+import useSearch from "../../hooks/useSearch"
 import "./search.css"
 
 function Search(){
 
-    const MINIMUM_SEARCH_LENGTH = 1
-    let {loading, error, data: { pokemons = []} = {}} = useQuery(GET_ALL_POKEMON)
+    const history = useHistory()
+    
+    const {loading, error, MINIMUM_SEARCH_LENGTH, searchMatches, setSearchMatches, findMatches} = useSearch() 
     const [searchTerm, setSearchTerm] = useState("")
     const [displayMatches, setDisplayMatches] = useState(false)
-    const {searchMatches, setSearchMatches} = useContext(AppContext)
-    const history = useHistory()
+    
 
     function handleChange(event){
 
@@ -41,26 +39,6 @@ function Search(){
         const term = searchTerm
         setSearchTerm("")
         history.push(`/searchresults/${term.toLowerCase()}`)
-    }
-
-    function findMatches(value) {
-        if (value.length < MINIMUM_SEARCH_LENGTH){
-            setSearchMatches([])
-        } else if (pokemons && pokemons.length){
-
-            let matchedPokemon
-            if (value.length === MINIMUM_SEARCH_LENGTH)
-            {
-                matchedPokemon = pokemons.filter(pokemon => pokemon.name.toLowerCase().startsWith(value.toLowerCase()) ||
-                                                            pokemon.number.includes(value.toLowerCase()))
-            } else {
-                matchedPokemon = pokemons.filter(pokemon => pokemon.name.toLowerCase().includes(value.toLowerCase()) ||
-                                                            pokemon.types.some(type => type.toLowerCase().indexOf(value.toLowerCase()) !== -1 ) ||                                            
-                                                            pokemon.number.includes(value.toLowerCase()))
-            }
-            
-            setSearchMatches(matchedPokemon ?? [])
-        }
     }
 
     const matchesElements = () => {        
