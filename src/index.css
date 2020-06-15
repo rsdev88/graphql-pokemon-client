@@ -44,10 +44,12 @@ html, body {
 }
 
 main {
-    /* top: calc(100% + 30vh);
-    position: absolute;
-    margin: 10px; */
     margin: 32vh 10px 50px 10px;
+    color: var(--dark-grey);
+}
+
+.error, .centered{
+    text-align: center;
 }
 
 .pokemon--grass, .pokemon--bug,  .pokemon--dragon{

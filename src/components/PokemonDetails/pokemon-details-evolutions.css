@@ -22,3 +22,7 @@
     font-size: 18pt !important;
     margin: 10px 0 !important;
 }
+
+.pokemon__details__evolutions__requirements{
+    text-align: center;
+}

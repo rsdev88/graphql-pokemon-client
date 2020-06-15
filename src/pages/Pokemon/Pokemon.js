@@ -4,6 +4,7 @@ import {useQuery} from "@apollo/react-hooks"
 import { GET_POKEMON } from "../../graphql/get-pokemon"
 
 import Spinner from "../../components/Spinner/Spinner"
+import ReturnToHome from "../../components/ReturnToHome/ReturnToHome"
 import PokemonHero from "../../components/PokemonHero/PokemonHero"
 import PokemonDetails from "../../components/PokemonDetails/PokemonDetails"
 
@@ -14,12 +15,17 @@ function Pokemon(){
 
     if (loading) return <Spinner />
 
-    if (error) return "There was an error retreiving data for this Pokémon. Please try again later."
+    if (error) return (
+        <>
+            <ReturnToHome/>
+            <p className="error">There was an error retreiving data for this Pokémon. Please try again later.</p>
+        </>
+        )
 
     return(
         pokemon && 
         <div className="pokemon">
-            <PokemonHero pokemon={pokemon} onClick={()=>{}} />
+            <PokemonHero pokemon={pokemon} onClick={()=>{}} includeReturnToHomeLink={true} />
             <PokemonDetails pokemon={pokemon} />
         </div>
     )

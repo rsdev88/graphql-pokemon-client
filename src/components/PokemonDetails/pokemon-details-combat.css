@@ -50,6 +50,7 @@
     grid-column: span 12;
     grid-row: 1 / 2;
     font-size: 17pt !important;
+    margin-top: 0 !important;
 }
 
 .pokemon__details__attacks__fast{

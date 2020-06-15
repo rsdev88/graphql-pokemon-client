@@ -16,7 +16,6 @@ header {
 }
 
 .header__title {
-    color: white;
     font-size: 32pt;
     text-shadow: 0px 0px 20px gray;
     grid-column: 2/3;
@@ -24,6 +23,18 @@ header {
     justify-self: center;
     align-self: center;
     margin: 0;
+}
+
+.header__title > a,
+.header__title > a:focus,
+.header__title > a:visited,
+.header__title > a:active {
+    color: white;
+    text-decoration: none;
+}
+
+.header__title > a:hover {
+    cursor: pointer;
 }
 
 @media screen and (min-width: 375px) {

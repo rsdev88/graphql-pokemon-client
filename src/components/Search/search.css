@@ -58,6 +58,10 @@
     padding: 10px 0;
 }
 
+.search__matches__list-error{
+    color: var(--red);
+}
+
 .search__matches__list-item a{
     text-decoration: none;
     color: black;

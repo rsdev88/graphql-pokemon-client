@@ -21,7 +21,7 @@ function Home(){
   
   if (loading) return <Spinner/>
   
-  if (error) return "There was an error retrieving the list of Pokémon. Please try again later."
+  if (error) return <p className="error">There was an error retrieving the list of Pokémon. Please try again later.</p>
 
     return(
        pokemons && 

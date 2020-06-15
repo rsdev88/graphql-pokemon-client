@@ -8,7 +8,7 @@ function PokemonDetailsCombat({pokemon}){
             <h3 className="pokemon__details__title--combat">Combat attributes</h3>
             <div className="pokemon__details__flee-rate">
                 <h4>Flee rate: </h4>
-                <span>🏃 {pokemon.fleeRate * 100}%</span>
+                <span>🏃 {(pokemon.fleeRate * 100).toFixed(2)}%</span>
             </div>
             {
                  pokemon.resistant &&
