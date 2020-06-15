@@ -9,7 +9,7 @@ function PokemonDetailsEvolutions({evolutions, evolutionRequirements = {}}){
             <h3 className="pokemon__details__evolutions__title">Evolution</h3>
             {
                 evolutionRequirements &&
-                <div className="pokemon__details__eveutions__requirements">
+                <div className="pokemon__details__evolutions__requirements">
                     <h4>Evolution requirements</h4>
                     <span>{evolutionRequirements.name} x {evolutionRequirements.amount}</span>
                 </div>

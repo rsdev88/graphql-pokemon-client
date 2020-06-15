@@ -1,0 +1,14 @@
+.link__return-to-home{
+    text-decoration: none;
+    grid-area: r;
+}
+
+.return-to-home--red{
+    color: var(--red);
+}
+
+.return-to-home--white{
+    color: white;
+    text-shadow: 1px 1px 1px grey;
+    margin-left: 10px;
+}

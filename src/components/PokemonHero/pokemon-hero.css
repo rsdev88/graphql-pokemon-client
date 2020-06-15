@@ -6,12 +6,13 @@
     background-position: center;
     border-radius: 10px 10px 0 0;
     box-shadow: 0px 2px 10px grey;
-    height: 420px;
+    height: 460px;
     display: grid;
     align-items: center;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: 110px 200px 110px;
-    grid-template-areas: 
+    grid-template-rows: 40px 110px 200px 110px;
+    grid-template-areas:
+        "r r r r r r r r r r r r" 
         ". h h h h h h h h h n ."
         ". i i i i i i i i i i ."
         ". t t t t t t t t t t .";
