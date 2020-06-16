@@ -7,10 +7,19 @@
     color: var(--red);
 }
 
+.return-to-home--red:hover{
+    color: var(--dark-red);
+    text-shadow: 0 1px 1px var(--red);
+}
+
 .return-to-home--white{
     color: white;
     text-shadow: 1px 1px 1px grey;
     margin-left: 10px;
+}
+
+.return-to-home--white:hover{
+    text-shadow: 1px 1px 3px black;
 }
 
 @media screen and (min-width: 768px) and (min-height: 600px){

@@ -30,6 +30,7 @@ html, body {
     font-size: 100%;
     vertical-align: baseline;
     top: 0;
+    overflow-x: hidden;
 }
 
 #root {
@@ -52,9 +53,19 @@ main {
     color: var(--dark-green)
 }
 
+.pokemon-preview.pokemon--grass:hover, .pokemon-preview.pokemon--bug:hover,  .pokemon-preview.pokemon--dragon:hover{
+    background-color: var(--green);
+    transition: 0.3s;
+}
+
 .pokemon--poison, .pokemon--psychic, .pokemon--ghost{
     background-color: var(--light-purple);
     color: var(--dark-purple)
+}
+
+.pokemon-preview.pokemon--poison:hover, .pokemon-preview.pokemon--psychic:hover, .pokemon-preview.pokemon--ghost:hover{
+    background-color: var(--purple);
+    transition: 0.3s;
 }
 
 .pokemon--electric, .pokemon--fairy {
@@ -62,9 +73,19 @@ main {
     color: var(--dark-yellow)
 }
 
+.pokemon-preview.pokemon--electric:hover, .pokemon-preview.pokemon--fairy:hover {
+    background-color: var(--yellow);
+    transition: 0.3s;
+}
+
 .pokemon--fire, .pokemon--ground {
     background-color: var(--light-orange);
     color: var(--dark-orange)
+}
+
+.pokemon-preview.pokemon--fire:hover, .pokemon-preview.pokemon--ground:hover {
+    background-color: var(--orange);
+    transition: 0.3s;
 }
 
 .pokemon--flying, .pokemon--water, .pokemon--ice {
@@ -72,9 +93,19 @@ main {
     color: var(--dark-blue)
 }
 
+.pokemon-preview.pokemon--flying:hover, .pokemon-preview.pokemon--water:hover, .pokemon-preview.pokemon--ice:hover {
+    background-color: var(--blue);
+    transition: 0.3s;
+}
+
 .pokemon--normal, .pokemon--fighting, .pokemon--rock {
     background-color: var(--light-red);
     color: var(--dark-red)
+}
+
+.pokemon-preview.pokemon--normal:hover, .pokemon-preview.pokemon--fighting:hover, .pokemon-preview.pokemon--rock:hover {
+    background-color: var(--red);
+    transition: 0.3s;
 }
 
 @media screen and (min-width: 768px){
