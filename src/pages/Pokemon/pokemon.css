@@ -28,7 +28,7 @@
     font-size: 13pt;
 }
 
-@media screen and (min-width: 768px){
+@media screen and (min-width: 736px){
     .pokemon{
         display: grid;
         grid-template-columns: repeat(12, 1fr);
