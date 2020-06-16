@@ -63,9 +63,29 @@
     border-radius: 20px;
 }
 
-@media screen and (min-width: 375px) {
+@media screen and (min-width: 375px) and (min-height: 600px){
 
     .pokemon-preview__name-container h3 {
         font-size: 15pt;
+    }
+}
+
+@media screen and (min-width: 768px) and (min-height: 600px){
+    .pokemon-preview__name-container h3 {
+        font-size: 20pt;
+        margin: 0;
+    }
+
+    .pokemon-preview{
+        height: 375px;
+        grid-template-rows: 65px 245px 65px;
+    }
+
+    .pokemon-preview__image-container {
+        height: 245px;
+    }
+
+    .pokemon-preview__types-container > ul {
+        font-size: 13pt;
     }
 }

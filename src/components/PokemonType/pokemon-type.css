@@ -33,3 +33,9 @@
 .li--normal, .li--fighting, .li--rock {
     background-color: var(--red);
 }
+
+@media screen and (min-width: 768px) and (min-height: 600px){
+    .pokemon__type{
+        padding: 8px;
+    }
+}
