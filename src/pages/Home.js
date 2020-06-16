@@ -2,6 +2,7 @@ import React from "react"
 import {useQuery} from "@apollo/react-hooks"
 import {useParams} from "react-router-dom"
 import {GET_POKEMONS} from "../graphql/get-pokemons"
+import Metadata from "../components/Metadata/Metadata"
 import PokemonContainer from "../components/PokemonContainer/PokemonContainer"
 import Pagination from "../components/Pagination/Pagination"
 import Spinner from "../components/Spinner/Spinner"
@@ -26,6 +27,7 @@ function Home(){
     return(
        pokemons && 
         <>
+          <Metadata />
           <PokemonContainer pokemons={pokemons.slice(numberOfPokemonToDisplay * -1)}/>
           <Pagination pageNumber={pageNumber} maxPages = {MAX_NUMBER_OF_PAGES}/>
         </>      

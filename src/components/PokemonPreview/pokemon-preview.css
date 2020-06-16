@@ -80,6 +80,8 @@
     .pokemon-preview{
         height: 375px;
         grid-template-rows: 65px 245px 65px;
+        max-width: 400px;
+        justify-self: center;
     }
 
     .pokemon-preview__image-container {

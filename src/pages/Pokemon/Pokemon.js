@@ -3,6 +3,7 @@ import {useParams} from "react-router-dom"
 import {useQuery} from "@apollo/react-hooks"
 import { GET_POKEMON } from "../../graphql/get-pokemon"
 
+import Metadata from "../../components/Metadata/Metadata"
 import Spinner from "../../components/Spinner/Spinner"
 import ReturnToHome from "../../components/ReturnToHome/ReturnToHome"
 import PokemonHero from "../../components/PokemonHero/PokemonHero"
@@ -17,6 +18,14 @@ function Pokemon(){
     const {name} = useParams()
     const {loading, error, data: { pokemon } = {}} = useQuery(GET_POKEMON, {variables: {name: name}})
 
+    let title = ""
+    let description = ""
+
+    if(pokemon){
+        title = `${pokemon.name} - Rob's Pokédex`
+        description = `Find out everything you want to know about ${pokemon.name}!`
+    }
+
     if (loading) return <Spinner />
 
     if (error) return (
@@ -28,6 +37,8 @@ function Pokemon(){
 
     return(
         pokemon && 
+        <>
+        <Metadata title={title} description={description} image={pokemon.image} />
         <div className="pokemon">
             <PokemonHero pokemon={pokemon} onClick={()=>{}} includeReturnToHomeLink={true} />
             <PokemonDetailsPhysical pokemon={pokemon}/>
@@ -40,6 +51,7 @@ function Pokemon(){
                 />
             }
         </div>
+        </>
     )
 }
 
