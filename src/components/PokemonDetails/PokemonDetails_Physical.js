@@ -3,7 +3,7 @@ import "./pokemon-details-physical.css"
 
 function PokemonDetailsPhysical({pokemon}){
     return (
-        <div className="pokemon__details__physical">
+        <div className="pokemon__details pokemon__details__physical">
             <h3 className="pokemon__details__title--physical">Physical attributes</h3>
             <div className="pokemon__details__classification">
                 <h4>Classification</h4><span>{pokemon.classification}</span>

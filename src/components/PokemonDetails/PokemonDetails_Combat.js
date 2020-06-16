@@ -4,7 +4,7 @@ import "./pokemon-details-combat.css"
 
 function PokemonDetailsCombat({pokemon}){
     return(
-        <div className="pokemon__details__combat">
+        <div className={`pokemon__details pokemon__details__combat ${pokemon.evolutions?.length ? "" : "pokemon__details__combat--bottom"}`}>
             <h3 className="pokemon__details__title--combat">Combat attributes</h3>
             <div className="pokemon__details__flee-rate">
                 <h4>Flee rate: </h4>
