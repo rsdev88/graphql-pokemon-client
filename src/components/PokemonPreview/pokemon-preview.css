@@ -31,6 +31,7 @@
     padding: 5px;
     border-radius: 10px;
     border: 2px solid;
+    text-align: center;
 }
 
 .pokemon-preview__image-container {

@@ -6,7 +6,11 @@ import { GET_POKEMON } from "../../graphql/get-pokemon"
 import Spinner from "../../components/Spinner/Spinner"
 import ReturnToHome from "../../components/ReturnToHome/ReturnToHome"
 import PokemonHero from "../../components/PokemonHero/PokemonHero"
-import PokemonDetails from "../../components/PokemonDetails/PokemonDetails"
+import PokemonDetailsPhysical from "../../components/PokemonDetails/PokemonDetails_Physical"
+import PokemonDetailsCombat from "../../components/PokemonDetails/PokemonDetails_Combat"
+import PokemonDetailsEvolutions from "../../components/PokemonDetails/PokemonDetails_Evolutions"
+
+import "./pokemon.css"
 
 function Pokemon(){
 
@@ -26,7 +30,15 @@ function Pokemon(){
         pokemon && 
         <div className="pokemon">
             <PokemonHero pokemon={pokemon} onClick={()=>{}} includeReturnToHomeLink={true} />
-            <PokemonDetails pokemon={pokemon} />
+            <PokemonDetailsPhysical pokemon={pokemon}/>
+            <PokemonDetailsCombat pokemon={pokemon} />
+            {
+                pokemon.evolutions &&
+                <PokemonDetailsEvolutions 
+                    evolutions={pokemon.evolutions} 
+                    evolutionRequirements={pokemon.evolutionRequirements} 
+                />
+            }
         </div>
     )
 }

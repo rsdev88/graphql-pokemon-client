@@ -5,7 +5,7 @@ import "./pokemon-details-evolutions.css"
 
 function PokemonDetailsEvolutions({evolutions, evolutionRequirements = {}}){
     return (
-        <div className="pokemon__details__evolutions">
+        <div className="pokemon__details pokemon__details__evolutions">
             <h3 className="pokemon__details__evolutions__title">Evolution</h3>
             {
                 evolutionRequirements &&

@@ -2,13 +2,15 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    border-radius: 0 0 10px 10px;
+    padding: 20px 0 20px 0;
 }
 
 .pokemon__details__evolutions__grid{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 200px));
     grid-template-rows: 300px;
-    grid-gap: 10px;
+    grid-gap: 20px;
     padding: 10px;
 }
 
@@ -25,4 +27,25 @@
 
 .pokemon__details__evolutions__requirements{
     text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+    .pokemon__details__evolutions {
+        grid-column: span 12;
+        grid-row: 3 / 4;
+    }
+
+    .pokemon__details__evolutions__grid{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-template-rows: auto;
+        grid-gap: 10px;
+        padding: 10px;
+        width: 95%;
+    }
+
+    .pokemon__details__evolutions__grid .pokemon-preview {
+        max-width: 300px;
+        justify-self: center;
+    }
 }
